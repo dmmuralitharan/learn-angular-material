@@ -1,0 +1,97 @@
+<div>
+  <div>
+    <h3>Basic Toggle Btn</h3>
+    <hr>
+
+    <mat-button-toggle #toggleBtn1>Click 1</mat-button-toggle>
+    {{ toggleBtn1.checked }}
+  </div>
+
+  <div>
+    <h3>Basic Toggle Btn without Ripple</h3>
+    <mat-button-toggle #toggleBtn2 checked disableRipple
+      >Click 1</mat-button-toggle
+    >
+    {{ toggleBtn2.checked }}
+  </div>
+
+  <div>
+    <h3>Basic Toggle Btn Disabled</h3>
+    <mat-button-toggle #toggleBtn3 disabled checked disableRipple
+      >Click 1</mat-button-toggle
+    >
+    {{ toggleBtn3.checked }}
+  </div>
+</div>
+
+<hr>
+
+<h2>Legacy Appearance</h2>
+<div>
+    <mat-button-toggle-group appearance="legacy">
+        <mat-button-toggle>B1</mat-button-toggle>
+        <mat-button-toggle>B2</mat-button-toggle>
+        <mat-button-toggle>B3</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+
+<hr>
+<h2>MatButtonToggleGroup</h2>
+
+<div>
+    <mat-button-toggle-group  #tg="matButtonToggleGroup">
+        <mat-button-toggle value="btn1">Btn 1</mat-button-toggle>
+        <mat-button-toggle value="btn2">Btn 2</mat-button-toggle>
+        <mat-button-toggle value="btn3">Btn 3</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    {{tg.value}}
+</div>
+
+
+<div>
+    <mat-button-toggle-group #tgmp="matButtonToggleGroup" multiple [hideMultipleSelectionIndicator]="hideMultipleSelectionIndicator()">
+        <mat-button-toggle value="1">B1</mat-button-toggle>
+        <mat-button-toggle value="2">B2</mat-button-toggle>
+        <mat-button-toggle value="3">B3</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{tgmp.value}}
+</div>
+
+<div>
+    <mat-button-toggle-group #tgp="matButtonToggleGroup" [hideSingleSelectionIndicator]="hideSingleSelectionIndicator()">
+        <mat-button-toggle value="1">B1</mat-button-toggle>
+        <mat-button-toggle value="2">B2</mat-button-toggle>
+        <mat-button-toggle value="3">B3</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{tgp.value}}
+</div>
+<hr>
+
+<h2>in Forms</h2>
+<h3>mat-button-toggle in Forms</h3>
+
+<div>
+    <mat-button-toggle-group [(ngModel)]="selectedValuesByForms" multiple>
+        <mat-button-toggle value="b1">b1</mat-button-toggle>
+        <mat-button-toggle value="b2">b2</mat-button-toggle>
+        <mat-button-toggle value="b3">b3</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    {{selectedValuesByForms}}
+</div>
+
+<h3>mat-button-toggle in Reactive Forms</h3>
+
+<div>
+    <mat-button-toggle-group  [formControl]="selectedValuesByReactiveForms" multiple>
+        <mat-button-toggle value="b1">b1</mat-button-toggle>
+        <mat-button-toggle value="b2">b2</mat-button-toggle>
+        <mat-button-toggle value="b3">b3</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    {{selectedValuesByReactiveForms.value}}
+</div>
+
+<hr>
