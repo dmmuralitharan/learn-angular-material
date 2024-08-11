@@ -1,0 +1,30 @@
+<mat-spinner mode="indeterminate">
+</mat-spinner>
+
+
+<mat-spinner
+    mode="determinate"
+    [value]="80">
+</mat-spinner>
+
+<mat-progress-spinner
+    mode="indeterminate"
+    >
+</mat-progress-spinner>
+
+
+<mat-progress-spinner
+    mode="determinate"
+    [value]="50">
+</mat-progress-spinner>
+
+
+<hr>
+<!-- example -->
+
+<button (click)="fetchDataFromDB()">Fetch Data From DB</button>
+@if(isSpinnerVisible()) {
+    <mat-progress-spinner color="accent"
+        mode="indeterminate">
+    </mat-progress-spinner>
+}
