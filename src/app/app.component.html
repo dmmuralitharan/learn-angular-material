@@ -1,0 +1,44 @@
+<div>
+    <mat-icon
+        color="primary"
+        matBadge="4"
+        matBadgePosition="above after"
+        matBadgeColor="accent"
+        matBadgeSize="small">
+            home
+    </mat-icon>
+
+
+    <div matBadge="3" matBadgeOverlap="false" class="c1">Hello</div>
+    <div matBadge="5" matBadgeColor="accent" class="c1">Hello</div>
+    
+    <div matBadge="5" matBadgeSize="small" class="c1">Hello</div>
+    <div matBadge="5" matBadgeSize="medium" class="c1">Hello</div>
+    <div matBadge="5" matBadgeSize="large" class="c1">Hello</div>
+    
+    <div matBadge="5" matBadgeDescription="Hello" class="c1">Hello</div>
+    
+    
+    <div matBadge="5" matBadgeDisabled="true" class="c1">Hello</div>
+    <div matBadge="5" matBadgeHidden="true" class="c1">Hello</div>
+    
+    <div matBadge="5" matBadgePosition="above" class="c1">Hello</div>
+    <div matBadge="5" matBadgePosition="above before" class="c1">Hello</div>
+    <div matBadge="5" matBadgePosition="below" class="c1">Hello</div>
+    <div matBadge="5" matBadgePosition="below before" class="c1">Hello</div>
+
+
+
+    <!-- example -->
+    <mat-icon
+    color="primary"
+    [matBadge]="matBadgeCount()"
+    matBadgePosition="above after"
+    matBadgeColor="accent"
+    matBadgeSize="small"
+    [matBadgeHidden]="hideMessageBadge()"
+    (click)="readMessage()"
+    >
+        message
+</mat-icon>
+</div>
