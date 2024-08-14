@@ -1,0 +1,176 @@
+<h2>Basic Menu</h2>
+
+<button mat-icon-button [matMenuTriggerFor]="menu1">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<mat-menu #menu1="matMenu">
+  <button mat-menu-item>
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>group</mat-icon>
+    <span>Group</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Redial</span>
+  </button>
+</mat-menu>
+
+<hr />
+
+<h2>Menu Positions</h2>
+
+<div>
+  <button
+    mat-flat-button
+    [matMenuTriggerFor]="menu11"
+  >
+  Click
+
+  </button>
+
+  <mat-menu #menu11="matMenu" xPosition="after">
+    <button mat-menu-item>
+      <span>1</span>
+    </button>
+    <button mat-menu-item>
+      <span>2</span>
+    </button>
+  </mat-menu>
+
+
+  <button
+    mat-flat-button
+    [matMenuTriggerFor]="menu12"
+  >
+  Click
+  </button>
+
+  <mat-menu #menu12="matMenu" xPosition="before">
+    <button mat-menu-item>
+      <span>1</span>
+    </button>
+    <button mat-menu-item>
+      <span>2</span>
+    </button>
+  </mat-menu>
+
+  <button
+    mat-flat-button
+    [matMenuTriggerFor]="menu13"
+  >
+  Click
+  </button>
+
+  <mat-menu #menu13="matMenu" yPosition="above">
+    <button mat-menu-item>
+      <span>1</span>
+    </button>
+    <button mat-menu-item>
+      <span>2</span>
+    </button>
+  </mat-menu>
+
+  <button
+    mat-flat-button
+    [matMenuTriggerFor]="menu14"
+  >
+  Click
+  </button>
+
+  <mat-menu #menu14="matMenu" yPosition="below">
+    <button mat-menu-item>
+      <span>1</span>
+    </button>
+    <button mat-menu-item>
+      <span>2</span>
+    </button>
+  </mat-menu>
+</div>
+
+<hr>
+
+<h2>Nested Menu</h2>
+
+<div>
+    <button mat-flat-button [matMenuTriggerFor]="menu20">
+      Web Development
+    </button>
+    <mat-menu #menu20="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="menu21">
+        <span>Frontend</span>
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="menu22">
+        <span>Backend</span>
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="menu23">
+        <span>Databases</span>
+      </button>
+      <button mat-menu-item>
+        <span>Others</span>
+      </button>
+    </mat-menu>
+</div>
+
+<mat-menu #menu21="matMenu">
+  <button mat-menu-item>
+    <span>Angular</span>
+  </button>
+  <button mat-menu-item>
+    <span>React</span>
+  </button>
+  <button mat-menu-item>
+    <span>Vue</span>
+  </button>
+</mat-menu>
+
+<mat-menu #menu22="matMenu">
+  <button mat-menu-item>
+    <span>Node js</span>
+  </button>
+  <button mat-menu-item>
+    <span>Python</span>
+  </button>
+  <button mat-menu-item>
+    <span>PHP</span>
+  </button>
+</mat-menu>
+
+<mat-menu #menu23="matMenu">
+  <button mat-menu-item>
+    <span>MySQL</span>
+  </button>
+  <button mat-menu-item>
+    <span>SQL Lite</span>
+  </button>
+  <button mat-menu-item>
+    <span>Mongo DB</span>
+  </button>
+</mat-menu>
+
+<hr>
+
+<h2>Lazy loading</h2>
+
+<div>
+    <button mat-flat-button [matMenuTriggerData]="{lan: 'Frontend'}" [matMenuTriggerFor]="menu30" >
+      Web Development
+    </button>
+
+    <button mat-flat-button [matMenuTriggerData]="{lan: 'Backend'}" [matMenuTriggerFor]="menu30" >
+      Web Development
+    </button>
+
+    <mat-menu #menu30="matMenu">
+      <ng-template matMenuContent let-lan="lan">
+        <button mat-menu-item>
+          <span>{{lan}}</span>
+        </button>
+      </ng-template>
+    </mat-menu>
+
+    
+</div>

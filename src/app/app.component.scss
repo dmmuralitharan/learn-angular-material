@@ -1,0 +1,7 @@
+div {
+    margin: 5rem;
+}
+
+div > * {
+    margin-left: 1rem;
+}
